@@ -8,6 +8,12 @@ const RequestForm = () => {
     date: "",
     address: "",
     instructions: "",
+    services: {
+      iron: 0,
+      drywash: 0,
+      rolling: 0,
+      shining: 0,
+    },
   });
 
   // Handle input and textarea changes
@@ -15,7 +21,17 @@ const RequestForm = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if (["iron", "drywash", "rolling", "shining"].includes(name)) {
+      setFormData({
+        ...formData,
+        services: {
+          ...formData.services,
+          [name]: parseInt(value) || 0,
+        },
+      });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   // Handle form submission
@@ -29,6 +45,12 @@ const RequestForm = () => {
       Date: ${formData.date}
       Address: ${formData.address}
       Instructions: ${formData.instructions}
+
+      Services Requested:
+      Iron: ${formData.services.iron} items
+      Dry Wash: ${formData.services.drywash} items
+      Rolling: ${formData.services.rolling} items
+      Shining: ${formData.services.shining} items
     `;
 
     // Redirect to WhatsApp with the pre-filled message
@@ -89,6 +111,67 @@ const RequestForm = () => {
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
+        </div>
+        <div>
+          <h2 className="text-lg font-medium text-gray-800">Services</h2>
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="iron" className="block text-sm font-medium text-gray-700">
+                Iron (Quantity)
+              </label>
+              <input
+                id="iron"
+                name="iron"
+                type="number"
+                min="0"
+                value={formData.services.iron}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label htmlFor="drywash" className="block text-sm font-medium text-gray-700">
+                Dry Wash (Quantity)
+              </label>
+              <input
+                id="drywash"
+                name="drywash"
+                type="number"
+                min="0"
+                value={formData.services.drywash}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label htmlFor="rolling" className="block text-sm font-medium text-gray-700">
+                Rolling (Quantity)
+              </label>
+              <input
+                id="rolling"
+                name="rolling"
+                type="number"
+                min="0"
+                value={formData.services.rolling}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label htmlFor="shining" className="block text-sm font-medium text-gray-700">
+                Shining (Quantity)
+              </label>
+              <input
+                id="shining"
+                name="shining"
+                type="number"
+                min="0"
+                value={formData.services.shining}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
         </div>
         <div>
           <label htmlFor="instructions" className="block text-sm font-medium text-gray-700">
