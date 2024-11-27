@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 const RequestForm = () => {
@@ -54,9 +54,11 @@ const RequestForm = () => {
     `;
 
     // Redirect to WhatsApp with the pre-filled message
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER&text=${encodeURIComponent(
+
+    const whatsappUrl = `https://wa.me/19016322989?text=${encodeURIComponent(
       message
     )}`;
+
     window.open(whatsappUrl, "_blank");
   };
 
@@ -70,7 +72,10 @@ const RequestForm = () => {
           Request Dry Wash
         </h1>
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
+          <label
+            htmlFor="name"
+            className="block text-sm font-semibold text-gray-700"
+          >
             Name
           </label>
           <input
@@ -84,7 +89,10 @@ const RequestForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-semibold text-gray-700"
+          >
             Phone Number
           </label>
           <input
@@ -99,7 +107,10 @@ const RequestForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="date" className="block text-sm font-semibold text-gray-700">
+          <label
+            htmlFor="date"
+            className="block text-sm font-semibold text-gray-700"
+          >
             Service Date & Time
           </label>
           <input
@@ -116,7 +127,10 @@ const RequestForm = () => {
           <h2 className="text-lg font-bold text-gray-800">Services</h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="iron" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="iron"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Iron (Quantity)
               </label>
               <input
@@ -130,7 +144,10 @@ const RequestForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="drywash" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="drywash"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Dry Wash (Quantity)
               </label>
               <input
@@ -144,7 +161,10 @@ const RequestForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="rolling" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="rolling"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Rolling (Quantity)
               </label>
               <input
@@ -158,7 +178,10 @@ const RequestForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="shining" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="shining"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Shining (Quantity)
               </label>
               <input
@@ -174,7 +197,10 @@ const RequestForm = () => {
           </div>
         </div>
         <div>
-          <label htmlFor="instructions" className="block text-sm font-semibold text-gray-700">
+          <label
+            htmlFor="instructions"
+            className="block text-sm font-semibold text-gray-700"
+          >
             Special Instructions
           </label>
           <textarea
