@@ -61,16 +61,16 @@ const RequestForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-12">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 p-6">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6 sm:p-8 space-y-6"
+        className="w-full max-w-lg bg-white rounded-xl shadow-lg p-8 space-y-6"
       >
-        <h1 className="text-2xl font-bold text-gray-800 text-center">
+        <h1 className="text-3xl font-extrabold text-gray-800 text-center mb-4">
           Request Dry Wash
         </h1>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
             Name
           </label>
           <input
@@ -79,12 +79,12 @@ const RequestForm = () => {
             placeholder="Enter your name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700">
             Phone Number
           </label>
           <input
@@ -94,12 +94,12 @@ const RequestForm = () => {
             placeholder="Enter your phone number"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
         <div>
-          <label htmlFor="date" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="date" className="block text-sm font-semibold text-gray-700">
             Service Date & Time
           </label>
           <input
@@ -108,15 +108,15 @@ const RequestForm = () => {
             type="datetime-local"
             value={formData.date}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             required
           />
         </div>
         <div>
-          <h2 className="text-lg font-medium text-gray-800">Services</h2>
-          <div className="space-y-4">
+          <h2 className="text-lg font-bold text-gray-800">Services</h2>
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="iron" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="iron" className="block text-sm font-semibold text-gray-700">
                 Iron (Quantity)
               </label>
               <input
@@ -126,11 +126,11 @@ const RequestForm = () => {
                 min="0"
                 value={formData.services.iron}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label htmlFor="drywash" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="drywash" className="block text-sm font-semibold text-gray-700">
                 Dry Wash (Quantity)
               </label>
               <input
@@ -140,11 +140,11 @@ const RequestForm = () => {
                 min="0"
                 value={formData.services.drywash}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label htmlFor="rolling" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="rolling" className="block text-sm font-semibold text-gray-700">
                 Rolling (Quantity)
               </label>
               <input
@@ -154,11 +154,11 @@ const RequestForm = () => {
                 min="0"
                 value={formData.services.rolling}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label htmlFor="shining" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="shining" className="block text-sm font-semibold text-gray-700">
                 Shining (Quantity)
               </label>
               <input
@@ -168,13 +168,13 @@ const RequestForm = () => {
                 min="0"
                 value={formData.services.shining}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
           </div>
         </div>
         <div>
-          <label htmlFor="instructions" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="instructions" className="block text-sm font-semibold text-gray-700">
             Special Instructions
           </label>
           <textarea
@@ -184,12 +184,12 @@ const RequestForm = () => {
             value={formData.instructions}
             onChange={handleChange}
             rows={3}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           ></textarea>
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold py-3 rounded-lg hover:opacity-90 focus:ring-4 focus:ring-indigo-400 focus:outline-none"
         >
           Request Service
         </button>
